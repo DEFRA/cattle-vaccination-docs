@@ -1,0 +1,29 @@
+model {
+    extend apha {
+        svoc = component {
+            title 'Single View of Customer Screens & Flows'
+            -> integrationBridge
+            -> svocRecords
+            aAdmin -> svoc
+            aVet -> svoc
+        }
+        svocRecords = storage {
+            title 'Single View of Customer (read-only)'
+        }
+        integrationBridge = component {
+            title 'APHA Integration Bridge'
+            -> SamData
+        }
+    }
+}
+
+deployment {
+    extend Salesforce {
+        instanceOf apha.svoc
+        instanceOf apha.svocRecords
+    }
+
+    extend CDP {
+        instanceOf apha.integrationBridge
+    }
+}

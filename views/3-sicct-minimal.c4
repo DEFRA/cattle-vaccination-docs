@@ -1,0 +1,50 @@
+views {
+    view SicctMinimal {
+        title '3 - Minimal SICCT Test Recording'
+        include epi
+        include aVet
+        include aAdmin
+        include apha
+        include apha.svoc
+        include apha.svocRecords
+        include apha.vaxRecord
+        include apha.testInternal
+        include apha.testRecord
+        include apha.sampleRecord
+        include apha.vaxRecord
+        include apha.integrationBridge
+        include epiData
+        include epiData.*
+        include Livestock
+        include Livestock.integrationLayer
+        include apha.SamData
+
+        exclude apha.vaxRecord .etl epiData.cattleTbData
+        exclude apha.vaxRecord .etl epiData.RADAR
+        
+    }
+
+    deployment view SicctMinimalDeployment {
+        title '3 - Minimal SICCT Test Recording - Deployment'
+
+        include Salesforce
+        include Salesforce.svoc
+        include Salesforce.svocRecords
+        include Salesforce.vaxRecord
+        include Salesforce.testInternal
+        include Salesforce.testRecord
+        include Salesforce.sampleRecord
+
+        include CDP
+        include CDP.integrationBridge
+        
+        include DSG
+        include DSG.cattleTbData
+        include DSG.RADAR
+
+        exclude apha.vaxRecord .etl epiData.cattleTbData
+        exclude apha.vaxRecord .etl epiData.RADAR
+    }
+
+
+}

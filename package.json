@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "serve": "likec4 serve"
+  },
+  "devDependencies": {
+    "likec4": "^1.57.0"
+  }
+}

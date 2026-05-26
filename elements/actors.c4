@@ -1,0 +1,43 @@
+model {
+    aAdmin = internalPerson {
+        title 'APHA Admin'
+        description 'Member of one of the admin teams dealing with bTB'
+    }
+
+    aVet = internalPerson {
+        title 'APHA Vet'
+        description 'APHA vetinarian working to investigate and control bTB'
+    }
+
+    aho = internalPerson {
+        title 'APHA Animal Health Officer'
+    }
+
+    epi = internalPerson {
+        title 'APHA Epidemiologist'
+    }
+
+    vVet = externalPerson {
+        title 'VDP OV'
+        description 'Official Vetinarian working through a Vetinary Delivery Partnership'
+    }
+
+    vAtt = externalPerson {
+        title 'VDP ATT'
+        description 'Approved Tuberculosis Tester working through a Vetinary Delivery Partnership'
+    }
+
+    vAdmin  = externalPerson {
+        title 'VDP Admin'
+        description 'Admin working for a Vetinary Delivery Partnership'
+    }
+
+    pVet = externalPerson {
+        title 'VDP OV'
+        description 'Official Vetinarian working privately'
+    }
+    public = externalPerson {
+        title 'Public'
+        description 'Member of the public'
+    }
+}

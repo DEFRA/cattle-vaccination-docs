@@ -1,0 +1,45 @@
+model {
+    extend apha {
+ 
+        testInternal = component {
+            title 'bTB Testing Internal Screens & Flows'
+            -> testRecord
+            -> sampleRecord
+            -> incidentRecord
+            -> svoc
+            -> integrationBridge
+            -> vaxRecord
+            -> Livestock.integrationLayer
+            aAdmin -> testInternal
+            aVet -> testInternal
+
+        }
+        testRecord = storage {
+            title 'bTB Test Visit Record'
+            -> sampleRecord
+            -> svocRecords
+            .etl epiData.cattleTbData
+            .etl epiData.RADAR
+        }
+        sampleRecord = storage {
+            title 'bTB individual Test Record'
+            .etl epiData.cattleTbData
+            .etl epiData.RADAR
+        }
+        incidentRecord = storage {
+            title 'bTB Incident Record'
+            -> testRecord
+            -> svocRecords
+        }
+    }
+}
+
+deployment {
+    extend Salesforce {
+        instanceOf testInternal
+        instanceOf testRecord
+        instanceOf sampleRecord
+        instanceOf incidentRecord
+    }
+
+}

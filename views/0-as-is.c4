@@ -1,0 +1,38 @@
+
+
+views {
+    view AsIs {
+        title '0 - As Is'
+        include epi
+        include aVet
+        include aho
+        include aAdmin
+        include vVet
+        include vAtt
+        include vAdmin
+        include pVet
+        include apha
+        include apha.Sam
+        include apha.SamData
+        include apha.iSam
+        include apha.LIMS
+        include epiData
+        include epiData.*
+        include Livestock
+        include Livestock.integrationLayer
+        include Livestock.CTS
+        include Livestock.ScotEID
+    }
+
+    deployment view AsIsDeployment {
+        title '0 - As Is - Deployment'
+
+        include PEGA
+        include PEGA.**
+        include LIMS
+        include LIMS.**
+        include DSG
+        include DSG.**
+    
+    }
+}

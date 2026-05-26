@@ -1,0 +1,19 @@
+deployment {
+    platform CDP 'CDP' {
+
+    }
+
+    platform Salesforce 'Salesforce' {
+
+    }
+
+    platform PEGA 'PEGA' {
+
+    }
+
+    platform LIMS 'LIMS' {
+
+    }
+
+    platform DSG 'DSG'
+}

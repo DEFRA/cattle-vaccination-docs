@@ -1,0 +1,24 @@
+model{
+    Livestock = context {
+        title 'Livestock Systems'
+        description 'Bounded context for Livestock systems'
+
+        integrationLayer = externalSystem {
+            title 'Livestock Integration Layer'
+            -> CTS
+            -> ScotEID
+        }
+
+        CTS = externalSystem {
+            description  'Movement system for England and Wales'
+        }
+
+        ScotEID = externalSystem {
+            description 'Movement system for Scotland'
+        }
+
+    }
+
+
+
+}

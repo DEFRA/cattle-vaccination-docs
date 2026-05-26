@@ -1,0 +1,51 @@
+model{
+    apha = context {
+        title 'APHA systems'
+        description 'Bounded context for APHA systems'
+
+
+        Sam = externalSystem {
+            title 'Sam'
+            description 'Disease and customer management, user interface and engine'
+            -> SamData
+            -> Livestock.integrationLayer
+            -> LIMS
+            aho -> Sam
+            aVet -> Sam
+            aAdmin -> Sam
+        }
+
+        SamData = storage {
+            title 'Sam Data'
+            .etl epiData.cattleTbData
+            .etl epiData.RADAR
+        }
+
+        iSam = externalSystem {
+            title 'iSam'
+            description 'Limited view of Sam, accessed via Government Gateway, for non-APHA users such as OVs.'
+            vVet -> iSam
+            vAtt -> iSam
+            vAdmin -> iSam
+            pVet -> iSam
+            -> Sam
+        }
+
+        LIMS = externalSystem {
+            description 'Laboratory Information Management System'
+        }
+
+    }
+}
+
+deployment {
+    extend PEGA {
+        instanceOf Sam
+        instanceOf iSam
+        instanceOf SamData
+    }
+
+    extend LIMS {
+        instanceOf LIMS
+    }
+}

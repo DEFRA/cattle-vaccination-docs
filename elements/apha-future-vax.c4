@@ -1,0 +1,34 @@
+model {
+    extend apha {
+        vaxInternal = component {
+            title 'bTB Vaccination Internal Screens & Flows'
+            -> vaxRecord
+            -> svoc
+            -> Livestock.integrationLayer
+            aAdmin -> vaxInternal
+            aVet -> vaxInternal
+        }
+        vaxRecord = storage {
+            title 'bTB Vaccination Record'
+            -> svocRecords
+            .etl epiData.cattleTbData
+            .etl epiData.RADAR
+        }
+        vaxStatusCheck = frontend {
+            title 'bTB Vaccination Status Checker'
+            -> vaxRecord
+            public -> vaxStatusCheck
+        }
+    }
+}
+
+deployment {
+    extend Salesforce {
+        instanceOf vaxRecord
+        instanceOf vaxInternal
+    }
+
+    extend CDP {
+        instanceOf apha.vaxStatusCheck
+    }
+}

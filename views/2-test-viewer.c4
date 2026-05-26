@@ -1,0 +1,36 @@
+views {
+    view TestViewer {
+        title '2 - Test Viewing'
+        include aVet
+        include aAdmin
+        include apha
+        include apha.svoc
+        include apha.svocRecords
+        include apha.testInternal
+        include apha.testRecord
+        include apha.sampleRecord
+        include apha.incidentRecord
+        include apha.integrationBridge
+        include apha.SamData
+        
+    }
+
+    deployment view TestViewerDeployment {
+        title '2 - Test Viewing - Deployment'
+
+        include Salesforce
+        include Salesforce.svoc
+        include Salesforce.svocRecords
+        include Salesforce.testInternal
+        include Salesforce.testRecord
+        include Salesforce.sampleRecord
+        include Salesforce.incidentRecord
+
+        include CDP
+        include CDP.vaxStatusCheck
+        include CDP.integrationBridge
+        
+    }
+
+
+}

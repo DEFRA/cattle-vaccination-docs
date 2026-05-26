@@ -1,0 +1,26 @@
+model{
+    epiData = context {
+        title 'Epidemiological data systems'
+        description 'Data sources for science & epidemiology'
+
+
+        cattleTbData =  externalSystem {
+            description 'Data for science & epidemiology'
+            epi -> cattleTbData
+        }
+
+        RADAR = externalSystem {
+            description 'Data for science & epidemiology'
+            epi -> RADAR
+        }
+
+    }
+}
+
+deployment {
+    extend DSG {
+        instanceOf cattleTbData
+        instanceOf RADAR
+        
+    }
+}
