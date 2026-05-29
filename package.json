@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "serve": "likec4 serve"
+    "serve": "likec4 serve",
+    "export": "likec4 export png -o ./output --flat"
   },
   "devDependencies": {
     "likec4": "^1.57.0"

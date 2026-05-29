@@ -10,6 +10,12 @@ npm install    # first time only
 npm run serve  # opens interactive diagram viewer at http://localhost:5173
 ```
 
+## Exporting diagrams
+
+```bash
+npm run export  # exports all views as PNG to ./output/
+```
+
 ## Diagrams
 
 | # | View | Description |
