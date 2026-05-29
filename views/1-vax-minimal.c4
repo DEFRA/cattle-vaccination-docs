@@ -1,7 +1,6 @@
 views {
     view VaxMinimal {
         title '1 - Minimal Vaccination Recording'
-        include public
         include epi
         include aVet
         include aAdmin
