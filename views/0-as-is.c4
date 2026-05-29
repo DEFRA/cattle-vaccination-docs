@@ -27,12 +27,9 @@ views {
     deployment view AsIsDeployment {
         title '0 - As Is - Deployment'
 
-        include PEGA
         include PEGA.**
-        include LIMS
         include LIMS.**
-        include DSG
         include DSG.**
-    
+
     }
 }

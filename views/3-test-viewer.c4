@@ -18,7 +18,6 @@ views {
     deployment view TestViewerDeployment {
         title '3 - Test Viewing - Deployment'
 
-        include Salesforce
         include Salesforce.svoc
         include Salesforce.svocRecords
         include Salesforce.testInternal
@@ -26,10 +25,9 @@ views {
         include Salesforce.sampleRecord
         include Salesforce.incidentRecord
 
-        include CDP
         include CDP.vaxStatusCheck
         include CDP.integrationBridge
-        
+
     }
 
 

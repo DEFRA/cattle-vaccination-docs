@@ -28,7 +28,6 @@ views {
     deployment view SicctMinimalDeployment {
         title '4 - Minimal SICCT Test Recording - Deployment'
 
-        include Salesforce
         include Salesforce.svoc
         include Salesforce.svocRecords
         include Salesforce.vaxRecord
@@ -36,11 +35,9 @@ views {
         include Salesforce.testRecord
         include Salesforce.sampleRecord
 
-        include CDP
         include CDP.integrationBridge
         include CDP.testExternal
-        
-        include DSG
+
         include DSG.cattleTbData
         include DSG.RADAR
 

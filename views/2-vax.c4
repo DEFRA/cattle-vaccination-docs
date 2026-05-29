@@ -26,24 +26,20 @@ views {
     deployment view VaxWithvetJourneyDeployment {
         title '2 - Vaccination Recording including Vet Journey - Deployment'
 
-        include Salesforce
         include Salesforce.svoc
         include Salesforce.svocRecords
         include Salesforce.vaxRecord
         include Salesforce.vaxInternal
 
-        include CDP
         include CDP.vaxStatusCheck
         include CDP.integrationBridge
         include CDP.vaxExternal
 
-        include DSG
         include DSG.cattleTbData
         include DSG.RADAR
 
-        include Azure
         include Azure.defraId
-        
+
     }
 
 
