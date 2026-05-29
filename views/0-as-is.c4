@@ -22,6 +22,7 @@ views {
         include Livestock.integrationLayer
         include Livestock.CTS
         include Livestock.ScotEID
+        include govGateway
     }
 
     deployment view AsIsDeployment {

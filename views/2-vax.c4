@@ -20,6 +20,8 @@ views {
         include Livestock.integrationLayer
         include apha.SamData
         include gio.defraId
+        include govGateway
+        include govOneLogin
         
     }
 

@@ -29,12 +29,17 @@ model{
             vAdmin -> iSam
             pVet -> iSam
             -> Sam
+            -> govGateway
         }
 
         LIMS = externalSystem {
             description 'Laboratory Information Management System'
         }
+    }
 
+    govGateway = externalSystem {
+        title 'Government Gateway'
+        description 'Identity provider'
     }
 }
 

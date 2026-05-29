@@ -19,6 +19,9 @@ views {
         include Livestock
         include Livestock.integrationLayer
         include apha.SamData
+        include gio.defraId
+        include govGateway
+        include govOneLogin
 
         exclude apha.vaxRecord .etl epiData.cattleTbData
         exclude apha.vaxRecord .etl epiData.RADAR

@@ -21,7 +21,14 @@ model {
 
         defraId = externalSystem {
             title 'Defra Customer Identity'
+            -> govGateway
+            -> govOneLogin
         }
+    }
+
+    govOneLogin = externalSystem {
+        title 'GOV.UK One Login'
+        description 'Identity Provider'
     }
 }
 
