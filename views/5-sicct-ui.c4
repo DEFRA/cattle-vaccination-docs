@@ -1,6 +1,6 @@
 views {
-    view VaxWithvetJourney {
-        title '2 - Vaccination Recording including Vet Journey'
+    view SicctUi {
+        title '5 - SICCT Testing (UI)'
         include epi
         include aVet
         include aAdmin
@@ -8,38 +8,43 @@ views {
         include apha.svoc
         include apha.svocRecords
         include apha.vaxRecord
-        include apha.vaxInternal
-        include apha.vaxExternal
+        include apha.testInternal
+        include apha.testExternal
+        include apha.bTbInternalApi
+        include apha.testRecord
         include apha.vaxRecord
         include apha.integrationBridge
-        include apha.bTbInternalApi
         include epiData
         include epiData.*
+        include Livestock
         include Livestock.integrationLayer
-        include apha.SamData
         include gio.defraId
         include govGateway
         include govOneLogin
+
+        exclude apha.vaxRecord .etl epiData.cattleTbData
+        exclude apha.vaxRecord .etl epiData.RADAR
         
     }
 
-    deployment view VaxWithvetJourneyDeployment {
-        title '2 - Vaccination Recording including Vet Journey - Deployment'
+    deployment view SicctUiDeployment {
+        title '5 - SICCT Testing (UI) - Deployment'
 
         include Salesforce.svoc
         include Salesforce.svocRecords
         include Salesforce.vaxRecord
-        include Salesforce.vaxInternal
+        include Salesforce.testInternal
+        include Salesforce.testRecord
 
         include CDP.integrationBridge
-        include CDP.vaxExternal
+        include CDP.testExternal
         include CDP.bTbInternalApi
 
         include DSG.cattleTbData
         include DSG.RADAR
 
-        include Azure.defraId
-
+        exclude apha.vaxRecord .etl epiData.cattleTbData
+        exclude apha.vaxRecord .etl epiData.RADAR
     }
 
 

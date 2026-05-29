@@ -14,6 +14,9 @@ model {
             title 'APHA Integration Bridge'
             -> SamData
         }
+        bTbInternalApi = component {
+            title 'bTB Internal API'
+        }
     }
 
     gio = context {
@@ -40,6 +43,7 @@ deployment {
 
     extend CDP {
         instanceOf apha.integrationBridge
+        instanceOf apha.bTbInternalApi
     }
 
     extend Azure {

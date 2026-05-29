@@ -2,14 +2,18 @@ model {
     extend apha {
         vaxExternal = frontend {
             title 'bTB Vaccination Vet Portal'
-            -> vaxInternal
+            -> bTbInternalApi
             -> gio.defraId
+            pVet -> vaxExternal
+            aVet -> vaxExternal
+            aho -> vaxExternal
         }
         vaxInternal = component {
             title 'bTB Vaccination Internal Screens & Flows'
             -> vaxRecord
             -> svoc
             -> Livestock.integrationLayer
+            bTbInternalApi -> vaxInternal
             aAdmin -> vaxInternal
             aVet -> vaxInternal
         }
@@ -21,7 +25,7 @@ model {
         }
         vaxStatusCheck = frontend {
             title 'bTB Vaccination Status Checker'
-            -> vaxRecord
+            -> bTbInternalApi
             public -> vaxStatusCheck
         }
     }

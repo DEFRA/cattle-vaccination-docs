@@ -1,0 +1,24 @@
+views {
+    view VaxPublicStatus {
+        title '3 - Make Vaccination Status Available'
+        include public
+        include apha.vaxRecord
+        include apha.vaxInternal
+        include apha.vaxStatusCheck
+        include apha.bTbInternalApi
+        
+    }
+
+    deployment view VaxPublicStatusDeployment {
+        title '3 - Make Vaccination Status Available - Deployment'
+
+        include Salesforce.vaxRecord
+        include Salesforce.vaxInternal
+
+        include CDP.vaxStatusCheck
+        include CDP.bTbInternalApi
+
+    }
+
+
+}

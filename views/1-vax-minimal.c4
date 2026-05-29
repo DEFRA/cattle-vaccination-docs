@@ -5,17 +5,14 @@ views {
         include epi
         include aVet
         include aAdmin
-        include apha
         include apha.svoc
         include apha.svocRecords
         include apha.vaxRecord
         include apha.vaxInternal
-        include apha.vaxStatusCheck
         include apha.vaxRecord
         include apha.integrationBridge
         include epiData
         include epiData.*
-        include Livestock
         include Livestock.integrationLayer
         include apha.SamData
         
@@ -29,7 +26,6 @@ views {
         include Salesforce.vaxRecord
         include Salesforce.vaxInternal
 
-        include CDP.vaxStatusCheck
         include CDP.integrationBridge
 
         include DSG.cattleTbData

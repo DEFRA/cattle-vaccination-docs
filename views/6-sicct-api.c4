@@ -1,45 +1,42 @@
 views {
-    view SicctMinimal {
-        title '4 - Minimal SICCT Test Recording'
+    view SicctApi {
+        title '6 - SICCT Testing (API)'
         include epi
-        include aVet
+        include vVet
+        include vAtt
+        include vAdmin
         include aAdmin
-        include apha
         include apha.svoc
         include apha.svocRecords
         include apha.vaxRecord
         include apha.testInternal
-        include apha.testExternal
         include apha.testRecord
-        include apha.sampleRecord
         include apha.vaxRecord
         include apha.integrationBridge
+        include apha.bTbInternalApi
         include epiData
         include epiData.*
-        include Livestock
         include Livestock.integrationLayer
-        include apha.SamData
-        include gio.defraId
-        include govGateway
-        include govOneLogin
+        include apha.testApi
+        include TOM
 
         exclude apha.vaxRecord .etl epiData.cattleTbData
         exclude apha.vaxRecord .etl epiData.RADAR
         
     }
 
-    deployment view SicctMinimalDeployment {
-        title '4 - Minimal SICCT Test Recording - Deployment'
+    deployment view SicctApiDeployment {
+        title '6 - SICCT Testing (API) - Deployment'
 
         include Salesforce.svoc
         include Salesforce.svocRecords
         include Salesforce.vaxRecord
         include Salesforce.testInternal
         include Salesforce.testRecord
-        include Salesforce.sampleRecord
 
         include CDP.integrationBridge
-        include CDP.testExternal
+        include CDP.testApi
+        include CDP.bTbInternalApi
 
         include DSG.cattleTbData
         include DSG.RADAR

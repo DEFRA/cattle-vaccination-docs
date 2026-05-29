@@ -11,14 +11,13 @@ views {
         include vAtt
         include vAdmin
         include pVet
-        include apha
         include apha.Sam
         include apha.SamData
         include apha.iSam
         include apha.LIMS
         include epiData
-        include epiData.*
-        include Livestock
+        include epiData.cattleTbData
+        include epiData.RADAR
         include Livestock.integrationLayer
         include Livestock.CTS
         include Livestock.ScotEID

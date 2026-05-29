@@ -3,38 +3,34 @@ model {
  
         testExternal = frontend {
             title 'bTB Skin Testing Vet Portal'
-            -> testInternal
+            -> bTbInternalApi
             -> gio.defraId
+            pVet -> testExternal
+            aVet -> testExternal
+            aho -> testExternal
+        }
+        testApi = component {
+            title 'bTb Testing API'
+            description 'API for VDPs to retrieve work and submit results'
+            -> bTbInternalApi
         }
         testInternal = component {
             title 'bTB Testing Internal Screens & Flows'
             -> testRecord
-            -> sampleRecord
-            -> incidentRecord
             -> svoc
             -> integrationBridge
             -> vaxRecord
             -> Livestock.integrationLayer
+            bTbInternalApi -> testInternal
             aAdmin -> testInternal
             aVet -> testInternal
 
         }
         testRecord = storage {
-            title 'bTB Test Visit Record'
-            -> sampleRecord
+            title 'bTB Test and Incident Records'
             -> svocRecords
             .etl epiData.cattleTbData
             .etl epiData.RADAR
-        }
-        sampleRecord = storage {
-            title 'bTB individual Test Record'
-            .etl epiData.cattleTbData
-            .etl epiData.RADAR
-        }
-        incidentRecord = storage {
-            title 'bTB Incident Record'
-            -> testRecord
-            -> svocRecords
         }
     }
 }
@@ -43,10 +39,9 @@ deployment {
     extend Salesforce {
         instanceOf testInternal
         instanceOf testRecord
-        instanceOf sampleRecord
-        instanceOf incidentRecord
     }
     extend CDP {
         instanceOf testExternal
+        instanceOf testApi
     }
 }

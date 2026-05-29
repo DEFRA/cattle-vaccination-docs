@@ -41,6 +41,16 @@ model{
         title 'Government Gateway'
         description 'Identity provider'
     }
+
+    TOM = externalSystem {
+        title 'Farmcare UK - Transaction Operation Manager'
+        description 'Example of a VDP system'
+
+        vAdmin -> TOM
+        vVet -> TOM
+        vAtt -> TOM
+        TOM -> apha.testApi
+    }
 }
 
 deployment {
