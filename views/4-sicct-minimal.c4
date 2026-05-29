@@ -1,6 +1,6 @@
 views {
     view SicctMinimal {
-        title '3 - Minimal SICCT Test Recording'
+        title '4 - Minimal SICCT Test Recording'
         include epi
         include aVet
         include aAdmin
@@ -9,6 +9,7 @@ views {
         include apha.svocRecords
         include apha.vaxRecord
         include apha.testInternal
+        include apha.testExternal
         include apha.testRecord
         include apha.sampleRecord
         include apha.vaxRecord
@@ -25,7 +26,7 @@ views {
     }
 
     deployment view SicctMinimalDeployment {
-        title '3 - Minimal SICCT Test Recording - Deployment'
+        title '4 - Minimal SICCT Test Recording - Deployment'
 
         include Salesforce
         include Salesforce.svoc
@@ -37,6 +38,7 @@ views {
 
         include CDP
         include CDP.integrationBridge
+        include CDP.testExternal
         
         include DSG
         include DSG.cattleTbData

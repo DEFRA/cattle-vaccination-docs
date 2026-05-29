@@ -15,6 +15,14 @@ model {
             -> SamData
         }
     }
+
+    gio = context {
+        title 'GIO Systems'
+
+        defraId = externalSystem {
+            title 'Defra Customer Identity'
+        }
+    }
 }
 
 deployment {
@@ -25,5 +33,9 @@ deployment {
 
     extend CDP {
         instanceOf apha.integrationBridge
+    }
+
+    extend Azure {
+        instanceOf gio.defraId
     }
 }

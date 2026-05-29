@@ -1,5 +1,10 @@
 model {
     extend apha {
+        vaxExternal = frontend {
+            title 'bTB Vaccination Vet Portal'
+            -> vaxInternal
+            -> gio.defraId
+        }
         vaxInternal = component {
             title 'bTB Vaccination Internal Screens & Flows'
             -> vaxRecord
@@ -29,6 +34,7 @@ deployment {
     }
 
     extend CDP {
-        instanceOf apha.vaxStatusCheck
+        instanceOf vaxStatusCheck
+        instanceOf vaxExternal
     }
 }

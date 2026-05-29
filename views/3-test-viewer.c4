@@ -1,6 +1,6 @@
 views {
     view TestViewer {
-        title '2 - Test Viewing'
+        title '3 - Test Viewing'
         include aVet
         include aAdmin
         include apha
@@ -16,7 +16,7 @@ views {
     }
 
     deployment view TestViewerDeployment {
-        title '2 - Test Viewing - Deployment'
+        title '3 - Test Viewing - Deployment'
 
         include Salesforce
         include Salesforce.svoc

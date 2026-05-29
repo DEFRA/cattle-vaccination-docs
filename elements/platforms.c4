@@ -16,4 +16,8 @@ deployment {
     }
 
     platform DSG 'DSG'
+
+    platform Azure {
+        title 'CCoE Azure'
+    }
 }

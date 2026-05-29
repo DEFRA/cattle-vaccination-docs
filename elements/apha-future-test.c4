@@ -1,6 +1,11 @@
 model {
     extend apha {
  
+        testExternal = frontend {
+            title 'bTB Skin Testing Vet Portal'
+            -> testInternal
+            -> gio.defraId
+        }
         testInternal = component {
             title 'bTB Testing Internal Screens & Flows'
             -> testRecord
@@ -41,5 +46,7 @@ deployment {
         instanceOf sampleRecord
         instanceOf incidentRecord
     }
-
+    extend CDP {
+        instanceOf testExternal
+    }
 }
